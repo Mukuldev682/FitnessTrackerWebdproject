@@ -55,21 +55,7 @@ GEMINI_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 | 📊 Weekly Health Summary | AI Coach → Generate Summary |
 | ⚠️ Anomaly Detection | Auto-loads on Dashboard |
 
----
 
-## Troubleshooting AI
-
-**"API key not set"** → You haven't added GEMINI_API_KEY to .env yet
-
-**"Invalid API Key"** → The key in .env doesn't match — re-copy it from Google AI Studio
-
-**"403 Forbidden"** → In Google Cloud Console, make sure "Generative Language API" is enabled for your project
-
-**"Rate limit"** → Wait 60 seconds (free tier: 15 req/min)
-
-**"Request timed out"** → Check your internet connection
-
----
 
 ## Connect Google Fit (for real health data)
 
@@ -79,7 +65,6 @@ GEMINI_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 4. Add to `.env`: `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
 5. Restart → Login → Sidebar: Google Fit → Connect
 
----
 
 ## Project Structure
 
@@ -98,12 +83,3 @@ FitLiveV2/
 └── package.json          ← No extra packages needed (uses built-in https)
 ```
 
----
-
-## Team
-| Name | Roll No | Email |
-|------|---------|-------|
-| Somya Joshi (Lead) | 23022853 | Joshisomya82@gmail.com |
-| Vaishali Nain | 23022148 | Vaishalinain2004@gmail.com |
-| Mukul Dev | 230213681 | mdev97455@gmail.com |
-| Kshitiz Singh | 23011679 | kshitizsingh1408@gmail.com |
