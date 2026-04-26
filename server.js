@@ -118,9 +118,32 @@ io.on('connection', (socket) => {
 });
 
 // ── Start Server ──────────────────────────────────────
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log('');
-  console.log('FitLive is running at http://localhost:' + PORT);
-  console.log('');
+const express = require("express");
+const serverless = require("serverless-http");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+
+// ✅ MongoDB connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
+
+// ✅ Sample route (test)
+app.get("/", (req, res) => {
+  res.send("API is working on Vercel 🚀");
 });
+
+// 👉 If you have routes, add them like:
+// const userRoutes = require("../routes/userRoutes");
+// app.use("/api/users", userRoutes);
+
+// ❌ DO NOT use app.listen()
+
+// ✅ Export for Vercel
+module.exports = serverless(app);
